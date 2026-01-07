@@ -1,1 +1,514 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loretta Adjerhore - Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #1e3a8a;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background: #eff6ff;
+            padding: 20px;
+            border-left: 4px solid #3b82f6;
+            margin: 20px 0;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #1e3a8a;
+            text-align: center;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            font-size: 1.8em;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        
+        .project-card h4 {
+            font-size: 1.2em;
+            color: #64748b;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .project-overview {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .project-section {
+            margin-top: 30px;
+        }
+        
+        .project-section h5 {
+            font-size: 1.2em;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .project-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .project-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .metrics {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .metric {
+            background: #eff6ff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        
+        .project-images {
+            margin-top: 30px;
+        }
+        
+        .project-images img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .skills h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #1e3a8a;
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .skill-category h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            transition: border-color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            border-color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            header h2 {
+                font-size: 1.2em;
+            }
+            
+            .project-card {
+                padding: 25px;
+            }
+            
+            .metrics {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Loretta Adjerhore</h1>
+            <h2>Master Data Analyst | Power BI Specialist</h2>
+            <p>London, UK | Available Immediately</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a certified Master Data Analyst (accredited by the American Council of Training and Development) with hands-on experience in healthcare analytics and business intelligence.</p>
+                
+                <p>During my intensive healthcare analytics internship, I analyzed 50,000 patient records for warfarin precision dosing, identifying high-risk patient groups and developing recommendations that could prevent 2,000+ adverse events annually and save $20-100M in healthcare costs.</p>
+                
+                <div class="highlight">
+                    <strong>💼 Open to:</strong> Full-time Data Analyst roles | Contract work | Freelance projects
+                </div>
+                
+                <p>My projects demonstrate end-to-end analytical capabilities across pharmaceutical distribution (£71M revenue analysis), European luxury retail (€5.3M across 7 cities), and HR analytics (identifying $800K-$1.2M cost savings opportunities).</p>
+                
+                <p>I specialize in Power BI, SQL, Tableau, and Excel, with expertise in data modeling, DAX, and multi-dimensional analysis. My problem-solving approach combines CRISP-DM methodology, root cause analysis, and business acumen to translate complex data into actionable strategic recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <!-- Project 1: GenexaHealth -->
+            <div class="project-card">
+                <h3>🏥 GenexaHealth | Warfarin Precision Dosing</h3>
+                <h4>Healthcare Analytics Internship</h4>
+                
+                <p class="project-overview">Analyzed 50,000 patient records to identify adverse event patterns in warfarin dosing, revealing 10-fold dose variability invalidating standard protocols. Developed risk stratification framework identifying high-risk groups accounting for 50%+ of adverse events.</p>
+                
+                <div class="project-section">
+                    <h5>Key Objectives</h5>
+                    <ul>
+                        <li>Identify patterns in adverse warfarin events across patient populations</li>
+                        <li>Evaluate dosing protocol effectiveness and dose variability</li>
+                        <li>Develop risk stratification framework for high-risk patients</li>
+                        <li>Quantify potential cost savings from improved monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h5>Key Insights</h5>
+                    <ul>
+                        <li>Discovered 10-fold dose variability (1mg-10mg) indicating critical protocol gaps</li>
+                        <li>48.6% of patients required doses significantly below standard 5mg starting dose</li>
+                        <li>High-risk groups (CKD patients, elderly 76+, amiodarone users) accounted for 50%+ of adverse events</li>
+                        <li>Lifestyle factors (smoking + alcohol) created 5.5x risk amplification</li>
+                        <li>Identified $20-100M in preventable cost savings through precision dosing</li>
+                    </ul>
+                </div>
+                
+                <div class="metrics">
+                    <span class="metric">Tools: Power BI, DAX, Healthcare Analytics</span>
+                    <span class="metric">Impact: $20-100M savings potential</span>
+                    <span class="metric">25%+ adverse event reduction</span>
+                </div>
+                
+                <!-- Add your dashboard images here -->
+                <div class="project-images">
+                    <p style="text-align: center; margin-top: 30px; color: #64748b;">
+                        <em>[Dashboard images will be added here]</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 2: NovaMed -->
+            <div class="project-card">
+                <h3>💊 NovaMed Solutions | Sales Performance Analytics</h3>
+                <h4>Pharmaceutical Distribution</h4>
+                
+                <p class="project-overview">Analyzed £71.3M in pharmaceutical sales across 6 countries and 200+ customers. Identified seasonal patterns with 32% revenue variance, product portfolio concentration, and geographic opportunities in Canada and Australia markets.</p>
+                
+                <div class="project-section">
+                    <h5>Key Insights</h5>
+                    <ul>
+                        <li>Identified 32% seasonal revenue variance (Q2 peak £6.6M vs Q1 trough £5M)</li>
+                        <li>Top 5 products generated 23.3% of total revenue (concentration opportunity)</li>
+                        <li>Canada dominated with £31.67M (44% of revenue) - market leader position to defend</li>
+                        <li>Australia showed £15.25M with 2x growth potential (45% expansion opportunity)</li>
+                        <li>Customer segmentation revealed 88% B2B sellers driving pharmaceutical distribution</li>
+                    </ul>
+                </div>
+                
+                <div class="metrics">
+                    <span class="metric">Tools: Power BI, DAX, Sales Analytics</span>
+                    <span class="metric">Impact: £3-4M projected growth</span>
+                    <span class="metric">20-25% Australia revenue increase</span>
+                </div>
+                
+                <div class="project-images">
+                    <p style="text-align: center; margin-top: 30px; color: #64748b;">
+                        <em>[Dashboard images will be added here]</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3: Choco de Luxe -->
+            <div class="project-card">
+                <h3>🍫 Choco de Luxe | European Sales Performance</h3>
+                <h4>Luxury Retail Analytics</h4>
+                
+                <p class="project-overview">Evaluated €5.32M in sales across 7 European cities, 3 distribution channels, and 25 sales representatives. Identified €672K revenue gap and channel profitability optimization opportunities through multi-market analysis.</p>
+                
+                <div class="project-section">
+                    <h5>Key Insights</h5>
+                    <ul>
+                        <li>Identified €672K revenue gap between top-performing Turin (€1.03M) and underperforming Lyon (€358K)</li>
+                        <li>Website channel delivered 45.8% profit margin vs 25.9% social media (62% higher ROI)</li>
+                        <li>Top 3 cities (Turin, Barcelona, Amsterdam) generated 61% of total revenue</li>
+                        <li>Lyon showed perfect 100% delivery but 65% lower revenue (market penetration issue)</li>
+                        <li>Sales team: 44% meeting €100K target, 56% requiring development</li>
+                    </ul>
+                </div>
+                
+                <div class="metrics">
+                    <span class="metric">Tools: Tableau, Multi-Market Analysis</span>
+                    <span class="metric">Impact: €500K+ improvement opportunity</span>
+                    <span class="metric">10-15% margin improvement</span>
+                </div>
+                
+                <div class="project-images">
+                    <p style="text-align: center; margin-top: 30px; color: #64748b;">
+                        <em>[Dashboard images will be added here]</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 4: NextGen Corp -->
+            <div class="project-card">
+                <h3>👥 NextGen Corp | Employee Success Analytics</h3>
+                <h4>HR Analytics & SQL Case Study</h4>
+                
+                <p class="project-overview">Analyzed employee database (197 employees, 89 turnovers) to investigate turnover crisis. Identified Engineering department existential risk (150% turnover rate) and systematic pay-performance inversion affecting retention.</p>
+                
+                <div class="project-section">
+                    <h5>Key Insights</h5>
+                    <ul>
+                        <li>Engineering department showed 150% turnover rate (existential threat - only 6 engineers remain)</li>
+                        <li>Systematic pay-performance inversion: Marketing (4.13 score, $77K) vs Sales (4.00 score, $84K)</li>
+                        <li>Engineers underpaid $15-40K below market ($80K actual vs $95-120K market rate)</li>
+                        <li>Identified 7 high-risk employees requiring immediate retention intervention</li>
+                        <li>Zero correlation between compensation and performance driving top talent departure</li>
+                    </ul>
+                </div>
+                
+                <div class="metrics">
+                    <span class="metric">Tools: SQL, PostgreSQL, HR Analytics</span>
+                    <span class="metric">Impact: $800K-$1.2M savings opportunity</span>
+                    <span class="metric">3-4x ROI on adjustments</span>
+                </div>
+                
+                <div class="project-images">
+                    <p style="text-align: center; margin-top: 30px; color: #64748b;">
+                        <em>[SQL query screenshots will be added here]</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2>Technical Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <ul>
+                        <li>Power BI (Advanced): DAX, Data Modeling, Interactive Dashboards</li>
+                        <li>Tableau: Multi-page Dashboards, Advanced Visualizations</li>
+                        <li>Excel: Advanced Functions, Dashboard Development</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Analysis & Engineering</h3>
+                    <ul>
+                        <li>SQL/PostgreSQL: Complex Queries, Database Design</li>
+                        <li>Microsoft Fabric: End-to-end Analytics, Data Engineering</li>
+                        <li>Statistical Analysis & Data Modeling</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Problem-Solving Frameworks</h3>
+                    <ul>
+                        <li>CRISP-DM Methodology</li>
+                        <li>Root Cause Analysis</li>
+                        <li>DMAIC Process Improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>📧 Email: <a href="mailto:lorettaadjerhore@gmail.com">lorettaadjerhore@gmail.com</a></p>
+                <p>💼 LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">[Add your LinkedIn URL]</a></p>
+                <p>📍 Location: London, England, UK</p>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Loretta Adjerhore. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
 
